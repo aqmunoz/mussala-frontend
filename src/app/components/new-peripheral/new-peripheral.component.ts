@@ -22,7 +22,7 @@ export class NewPeripheralComponent implements OnInit {
               private router: Router,
               private ngZone: NgZone,
               private peripheralApi: ApiService,
-              private routeActive: ActivatedRoute) { }
+              private routeActive: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.peripheralForm = this.fb.group({
@@ -38,13 +38,12 @@ export class NewPeripheralComponent implements OnInit {
   }  
 
   /* Submit book */
-  submitPeripheralForm() {
+  submitPeripheralForm = () => {
     if (this.peripheralForm.valid) {           
       this.peripheralForm.value.owner = this.gatewayId;
-      console.log(this.peripheralForm.value);
       this.peripheralApi.AddPeripheral(this.peripheralForm.value).subscribe(res => {
-        if(res.error){          
-          alert(res.msg);                    
+        if(res.error){    
+          alert(res.msg)         
         }
         else{
           let url = '/view-peripherals-gateway/' + this.gatewayId;
@@ -53,5 +52,4 @@ export class NewPeripheralComponent implements OnInit {
       });
     }
   }
-
 }

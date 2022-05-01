@@ -11,6 +11,10 @@ import { NewGatewayComponent } from './components/new-gateway/new-gateway.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewPeripheralsComponent } from './components/view-peripherals/view-peripherals.component';
 import { NewPeripheralComponent } from './components/new-peripheral/new-peripheral.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar'
+
 
 @NgModule({
   declarations: [
@@ -19,6 +23,7 @@ import { NewPeripheralComponent } from './components/new-peripheral/new-peripher
     NewGatewayComponent,
     ViewPeripheralsComponent,
     NewPeripheralComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,11 @@ import { NewPeripheralComponent } from './components/new-peripheral/new-peripher
     ReactiveFormsModule,
     AngularMaterialModule,
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MatSnackBar, useValue: {} },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

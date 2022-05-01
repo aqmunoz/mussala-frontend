@@ -17,10 +17,10 @@ export class ListGatewaysComponent implements OnInit {
   dataSource!: MatTableDataSource<Gateway>;
   @ViewChild('paginator') paginator!: MatPaginator;
   displayedColumns: string[] = ['_id', 'name', 'serial', 'address', 'action'];
+  confirmDelete: string = 'Delete gateway';
+  textDelete: string = 'Are you sure?';
 
-  constructor(private gatewayApi: ApiService) { 
-    
-  }
+  constructor(private gatewayApi: ApiService) {}
 
   ngOnInit(): void {
     this.gatewayApi.GetGateways().subscribe(data => {
@@ -33,11 +33,15 @@ export class ListGatewaysComponent implements OnInit {
   }
 
   deleteGateway(index: number, e: { _id: any; }){
-    if(window.confirm('Are you sure')) {
-      const data = this.dataSource.data;
-      data.splice((this.paginator.pageIndex * this.paginator.pageSize) + index, 1);
-      this.dataSource.data = data;
-      this.gatewayApi.DeleteGateway(e._id).subscribe()
+    const data = this.dataSource.data;
+    data.splice((this.paginator.pageIndex * this.paginator.pageSize) + index, 1);
+    this.dataSource.data = data;
+    this.gatewayApi.DeleteGateway(e._id).subscribe()
+  }
+
+  handleAction(valueEmitted: any) {
+    if (valueEmitted.accept) {
+      this.deleteGateway(valueEmitted.params._id, valueEmitted.params.element)
     }
   }
 

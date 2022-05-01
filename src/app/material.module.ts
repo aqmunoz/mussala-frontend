@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 //import { MatNativeDateModule } from '@angular/material';
 
 
@@ -41,7 +42,8 @@ import { MatCardModule } from '@angular/material/card';
       MatTooltipModule,
       MatTableModule,
       MatPaginatorModule,
-      MatCardModule
+      MatCardModule,
+      MatDialogModule,
    ],
    exports: [
       MatButtonModule,
@@ -60,11 +62,12 @@ import { MatCardModule } from '@angular/material/card';
       MatTooltipModule,
       MatTableModule,
       MatPaginatorModule,
-      MatCardModule
+      MatCardModule,
+      MatDialogModule
    ],
    providers: [
       MatDatepickerModule,
-      MatNativeDateModule
+      MatNativeDateModule,
    ]
 })
 
