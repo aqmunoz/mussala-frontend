@@ -10,7 +10,7 @@
             [routerLink]="['/new-gateway']">New</button>
   <p *ngIf="gatewayData.length <= 0" class="no-data">There is no gateway added yet!</p>
   
-  <div class="container" *ngIf="gatewayData.length > 0">
+  <div class="container margin-top" *ngIf="gatewayData.length > 0">
     <div class="mat-elevation-z8">
       <table class="full-width" mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="_id">

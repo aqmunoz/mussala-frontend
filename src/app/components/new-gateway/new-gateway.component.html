@@ -1,14 +1,13 @@
 <div class="new-gateway-form">
-    <div class="title-group  esp-up">
-        <h1 class="mat-h1">New Gateway</h1>
-        <mat-divider fxFlex="1 0"></mat-divider>
-    </div>
 
 
     <form [formGroup]="gatewayForm" (ngSubmit)="submitGatewayForm()" #resetGatewayForm="ngForm" novalidate>
         <!-- Left block -->
         <div class="center-content">
             <mat-card class="card-form">
+                <div class="title-group  esp-up">
+                    <h1 class="mat-h1">New Gateway</h1>
+                </div>
                 <div class="controlers-wrapper">
                     <!-- Name -->
                     <mat-form-field class="example-full-width">

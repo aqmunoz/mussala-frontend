@@ -9,12 +9,16 @@ import { ListGatewaysComponent } from './components/list-gateways/list-gateways.
 import { HttpClientModule } from '@angular/common/http';
 import { NewGatewayComponent } from './components/new-gateway/new-gateway.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewPeripheralsComponent } from './components/view-peripherals/view-peripherals.component';
+import { NewPeripheralComponent } from './components/new-peripheral/new-peripheral.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListGatewaysComponent,
     NewGatewayComponent,
+    ViewPeripheralsComponent,
+    NewPeripheralComponent,
   ],
   imports: [
     BrowserModule,

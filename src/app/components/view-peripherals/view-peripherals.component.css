@@ -3,7 +3,7 @@
     margin-left: 10px;
 }
 
-.list-gateways{
+.list-peripherals{
     position: relative;
     display: block;
 }
@@ -13,7 +13,7 @@
     margin-top: 5px;
 }
 
-.full-width{
+.table-width {
     width: 100%;
 }
 
